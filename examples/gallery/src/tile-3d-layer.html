@@ -30,9 +30,6 @@
     mapStyle: 'mapbox://styles/mapbox/dark-v9',
     initialViewState: INITIAL_VIEW_STATE,
     controller: true,
-    onViewStateChange: ({viewState}) => {
-      deckgl.setProps({viewState});
-    },
     layers: [
       new Tile3DLayer({
         id: 'tile-3d-layer',
@@ -49,7 +46,7 @@
             longitude,
             latitude
           };
-          deckgl.setProps({viewState});
+          deckgl.setProps({initialViewState: viewState});
         }
       })
     ]
